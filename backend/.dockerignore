@@ -1,0 +1,8 @@
+node_modules
+dist
+.env
+.env.*
+*.md
+.vscode
+.idea
+vitest.config.ts

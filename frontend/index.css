@@ -1,0 +1,189 @@
+@import "tailwindcss";
+
+/* Custom fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ============================================================================
+   FarsightIQ styleIQ Design System
+   Purple/Pink Theme - PM Vision Implementation
+   ============================================================================ */
+
+:root {
+  /* Primary Colors (Purple) */
+  --color-primary-dark: #581c87;
+  --color-primary: #7c3aed;
+  --color-primary-light: #a78bfa;
+  
+  /* Accent Colors (Pink/Magenta for AI) */
+  --color-accent: #ec4899;
+  --color-accent-hover: #db2777;
+  --color-accent-light: #fdf2f8;
+  
+  /* AI Gradient */
+  --gradient-ai: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+  --gradient-ai-hover: linear-gradient(135deg, #db2777 0%, #7c3aed 100%);
+  
+  /* Neutral Colors */
+  --color-background: #ffffff;
+  --color-background-alt: #f8fafc;
+  --color-background-card: #ffffff;
+  
+  --color-text-primary: #1e1b4b;
+  --color-text-secondary: #6b7280;
+  --color-text-muted: #9ca3af;
+  
+  --color-border: #e5e7eb;
+  --color-border-light: #f3f4f6;
+  
+  /* Status Colors */
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #8b5cf6;
+  
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  
+  /* Shadows with purple tint */
+  --shadow-sm: 0 1px 2px 0 rgba(139, 92, 246, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(139, 92, 246, 0.1), 0 2px 4px -1px rgba(139, 92, 246, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(139, 92, 246, 0.1), 0 4px 6px -2px rgba(139, 92, 246, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(139, 92, 246, 0.15), 0 10px 10px -5px rgba(139, 92, 246, 0.04);
+  --shadow-purple: 0 10px 40px -10px rgba(139, 92, 246, 0.3);
+}
+
+/* AI Processing Overlay Animation */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes bounce-dots {
+  0%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-8px); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 1.5s linear infinite;
+}
+
+.animate-bounce-dot {
+  animation: bounce-dots 1.4s ease-in-out infinite;
+}
+
+.animate-bounce-dot-delay-1 {
+  animation: bounce-dots 1.4s ease-in-out infinite 0.16s;
+}
+
+.animate-bounce-dot-delay-2 {
+  animation: bounce-dots 1.4s ease-in-out infinite 0.32s;
+}
+
+/* Gradient button for AI actions */
+.btn-ai-gradient {
+  background: var(--gradient-ai);
+  color: white;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px -3px rgba(236, 72, 153, 0.4);
+}
+
+.btn-ai-gradient:hover {
+  background: var(--gradient-ai-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -4px rgba(236, 72, 153, 0.5);
+}
+
+/* Purple table headers */
+.table-header-purple {
+  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+}
+
+/* AI suggestion highlight */
+.ai-suggestion-cell {
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
+  border: 2px dashed rgba(236, 72, 153, 0.3);
+}
+
+/* styleIQ brand chip */
+.brand-chip-styleiq {
+  background: #111827;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+}
+
+.brand-chip-styleiq .iq-badge {
+  background: #7c3aed;
+  color: white;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  margin-left: 0.375rem;
+  font-size: 0.625rem;
+  font-weight: 900;
+  font-style: italic;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background-color: var(--color-background-alt);
+  color: var(--color-text-primary);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* Custom scrollbar utility class */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #e5e7eb;
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #d1d5db;
+}
